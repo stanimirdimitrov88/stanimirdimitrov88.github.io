@@ -62,12 +62,21 @@
       display: grid;
       gap: 1rem;
     }
-    .project-empty {
-      border: 1px dashed #d1d5db;
+    .project {
+      border: 1px solid #e5e7eb;
       border-radius: .75rem;
-      padding: 1.5rem 1.25rem;
-      background: #f9fafb;
-      color: #6b7280;
+      padding: 1.1rem 1.25rem;
+      background: #fff;
+    }
+    .project strong {
+      font-size: 1rem;
+    }
+    .project a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .project a:hover {
+      text-decoration: underline;
     }
     footer {
       border-top: 1px solid #e5e7eb;
@@ -112,34 +121,32 @@
     <!-- HOME -->
     <section id="home">
       <h1>Stanimir Dimitrov</h1>
-      <p class="subtitle">BSc Data Science @ TU/e </p>
+      <p class="subtitle">BSc Data Science @ TU/e</p>
       <p>
         I am a third year data science student at Eindhoven University of Technology, passionate about using data to solve complex problems. I focus on machine learning, predictive analytics, and AI.
       </p>
-      <p>
-      </p>
     </section>
 
-    <!-- PROJECTS (empty for now) -->
+    <!-- PROJECTS -->
     <section id="projects" style="display:none;">
       <h2>Projects</h2>
       <div class="project-list">
-        <div class="project-empty">
-          Projects coming soon. Add new cards here, e.g.:
-          <pre>
-&lt;div class="project"&gt;
-  &lt;strong&gt;My ML Dashboard&lt;/strong&gt; – Streamlit app for ...
-  &lt;br /&gt;
-  &lt;a href="https://github.com/yourusername/ml-dashboard"&gt;GitHub&lt;/a&gt;
-&lt;/div&gt;
-          </pre>
+        <div class="project">
+          <strong>WardWatch – burglary forecasting</strong><br>
+          XGBoost + LSTM for London LSOAs, with explainability (SHAP) and baseline comparison.<br>
+          <a href="https://github.com/yourusername/wardwatch" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="project">
+          <strong>Fridgital</strong><br>
+          Smart app to reduce food waste through receipt scanning, inventory tracking, and recipe/restock suggestions.<br>
+          <a href="https://github.com/yourusername/fridgital" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2025 Your Name. All rights reserved.
+    © 2025 Stanimir Dimitrov. All rights reserved.
   </footer>
 </body>
 </html>
