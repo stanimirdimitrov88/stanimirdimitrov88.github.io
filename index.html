@@ -4,149 +4,68 @@
   <meta charset="UTF-8" />
   <title>Stanimir Dimitrov | Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --accent: #2563eb;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    header {
-      border-bottom: 1px solid #e5e7eb;
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .nav {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 0.9rem 1rem;
-    }
-    .nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-    }
-    .nav a.active {
-      color: var(--accent);
-    }
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2.5rem 1rem 3.5rem;
-    }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: .5rem;
-    }
-    .subtitle {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-    section {
-      margin-top: 3rem;
-    }
-    .project-list {
-      display: grid;
-      gap: 1rem;
-    }
-    .project {
-      border: 1px solid #e5e7eb;
-      border-radius: .75rem;
-      padding: 1.1rem 1.25rem;
-      background: #fff;
-    }
-    .project strong {
-      font-size: 1rem;
-    }
-    .project a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .project a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      border-top: 1px solid #e5e7eb;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      color: #9ca3af;
-      font-size: .85rem;
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 1.8rem; }
-      .nav { gap: 1rem; }
-    }
-  </style>
-  <script>
-    // simple section switcher to imitate tabs
-    function showSection(id) {
-      document.querySelectorAll("section").forEach(s => s.style.display = "none");
-      document.getElementById(id).style.display = "block";
-      document.querySelectorAll(".nav a").forEach(a => a.classList.remove("active"));
-      document.querySelector('[data-target="'+id+'"]').classList.add("active");
-    }
-    document.addEventListener("DOMContentLoaded", () => {
-      showSection("home");
-      document.querySelectorAll(".nav a").forEach(a => {
-        a.addEventListener("click", e => {
-          e.preventDefault();
-          showSection(a.dataset.target);
-        });
-      });
-    });
-  </script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <nav class="nav">
-      <a href="#" data-target="home" class="active">Home</a>
-      <a href="#" data-target="projects">Projects</a>
-    </nav>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span> Stanimir Dimitrov</div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <!-- HOME -->
-    <section id="home">
-      <h1>Stanimir Dimitrov</h1>
-      <p class="subtitle">BSc Data Science @ TU/e</p>
-      <p>
-        I am a third year data science student at Eindhoven University of Technology, passionate about using data to solve complex problems. I focus on machine learning, predictive analytics, and AI.
-      </p>
+  <main class="container">
+    <section class="hero">
+      <h1>Data Science student building practical AI projects</h1>
+      <p class="subtitle">BSc Data Science @ TU/e • Machine Learning • Predictive Analytics • MLOps curious</p>
+      <div class="actions">
+        <a class="button primary" href="projects.html">View Projects</a>
+        <a class="button" href="mailto:stanimirdimitrov88@gmail.com">Contact me</a>
+        <a class="button" href="https://github.com/stanimirdimitrov88" target="_blank" rel="noopener">GitHub</a>
+        <a class="button" href="https://www.linkedin.com/in/stanimirdimitrov88" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" style="display:none;">
-      <h2>Projects</h2>
-      <div class="project-list">
-        <div class="project">
-          <strong>WardWatch – burglary forecasting</strong><br>
-          XGBoost + LSTM for London LSOAs, with explainability (SHAP) and baseline comparison.<br>
-          <a href="https://github.com/yourusername/wardwatch" target="_blank" rel="noopener">GitHub</a>
-        </div>
-        <div class="project">
-          <strong>Fridgital</strong><br>
-          Smart app to reduce food waste through receipt scanning, inventory tracking, and recipe/restock suggestions.<br>
-          <a href="https://github.com/yourusername/fridgital" target="_blank" rel="noopener">GitHub</a>
-        </div>
+    <section class="section">
+      <h2>Featured</h2>
+      <p class="lead">A couple of things I enjoyed building recently.</p>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="project-wardwatch.html">WardWatch – burglary forecasting</a></h3>
+          <div class="meta">XGBoost + LSTM • SHAP explainability • London LSOAs</div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">LSTM</span>
+            <span class="tag">Time series</span>
+          </div>
+          <div class="links">
+            <a href="project-wardwatch.html">Read more</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3><a href="project-fridgital.html">Fridgital</a></h3>
+          <div class="meta">Receipt OCR • Inventory tracking • Recipe suggestions</div>
+          <div class="tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">OCR</span>
+          </div>
+          <div class="links">
+            <a href="project-fridgital.html">Read more</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2025 Stanimir Dimitrov. All rights reserved.
+    <div class="container">© 2025 Stanimir Dimitrov. All rights reserved.</div>
   </footer>
 </body>
 </html>

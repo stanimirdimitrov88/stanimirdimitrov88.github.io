@@ -2,61 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>WardWatch – Stanimir Dimitrov</title>
+  <title>WardWatch – Case study | Stanimir Dimitrov</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root { --bg:#fff; --text:#111827; --muted:#6b7280; --accent:#2563eb; }
-    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; background:var(--bg); color:var(--text); }
-    header { border-bottom:1px solid #e5e7eb; background:#fff; position:sticky; top:0; z-index:10; }
-    .nav { max-width:900px; margin:0 auto; display:flex; gap:1.5rem; padding:.9rem 1rem; }
-    .nav a { text-decoration:none; color:var(--text); font-weight:500; }
-    main { max-width:900px; margin:0 auto; padding:2.5rem 1rem 3.5rem; }
-    h1 { font-size:2rem; margin-bottom:.5rem; }
-    .muted { color:var(--muted); }
-    .hero-img { margin:1.5rem 0; border:1px solid #e5e7eb; border-radius:.75rem; overflow:hidden; }
-    .hero-img img { width:100%; display:block; }
-    .section-title { margin-top:2rem; font-weight:600; }
-    a { color:var(--accent); }
-    footer { border-top:1px solid #e5e7eb; text-align:center; padding:1.5rem 1rem; color:#9ca3af; font-size:.85rem; }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-    </nav>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span> Stanimir Dimitrov</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <h1>WardWatch – burglary forecasting</h1>
-    <p class="muted">Predictive policing / spatial–temporal forecasting for London LSOAs.</p>
+  <main class="container">
+    <section class="section">
+      <a class="button" href="projects.html">← Back to projects</a>
+      <div class="spacer"></div>
+      <h1>WardWatch – burglary forecasting</h1>
+      <p class="subtitle">Forecasting weekly burglaries for London LSOAs using XGBoost and LSTM, with SHAP explainability and baselines.</p>
 
-    <div class="hero-img">
-      <img src="images/wardwatch-dashboard.png" alt="WardWatch dashboard screenshot" />
-    </div>
+      <div class="grid">
+        <article class="card" style="grid-column: span 12;">
+          <h3>Overview</h3>
+          <p>
+            WardWatch predicts short-term burglary counts for each Lower Super Output Area (LSOA) in London.
+            I engineered temporal features and exogenous signals (seasonality, holidays, weather proxies) and compared
+            classical baselines (naive, seasonal naive, moving averages) to modern ML models.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">LSTM</span>
+            <span class="tag">Time series</span>
+            <span class="tag">SHAP</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/stanimirdimitrov88/wardwatch" target="_blank" rel="noopener">GitHub Repository</a>
+          </div>
+        </article>
 
-    <h2 class="section-title">Overview</h2>
-    <p>
-      WardWatch is a predictive model that forecasts burglary risk for London LSOAs. It compares
-      XGBoost, LSTM and simple statistical baselines, and explains feature importance via SHAP.
-    </p>
+        <article class="card" style="grid-column: span 12;">
+          <h3>Results</h3>
+          <ul>
+            <li>ML models beat naive and seasonal naive baselines across most LSOAs.</li>
+            <li>XGBoost delivers best average sMAPE improvement; LSTM competitive for highly seasonal segments.</li>
+            <li>SHAP indicates strong weekly seasonality and holiday proximity effects on predictions.</li>
+            <li>Error clustering reveals geographic pockets with higher volatility benefitting from richer features.</li>
+          </ul>
+        </article>
 
-    <h2 class="section-title">Tech stack</h2>
-    <ul>
-      <li>Python (pandas, scikit-learn, xgboost)</li>
-      <li>LSTM (Keras / TensorFlow or PyTorch)</li>
-      <li>SHAP for explainability</li>
-    </ul>
-
-    <h2 class="section-title">Repository</h2>
-    <p>
-      <a href="https://github.com/yourusername/wardwatch" target="_blank" rel="noopener">View on GitHub</a>
-    </p>
+        <article class="card" style="grid-column: span 12;">
+          <h3>Stack & Approach</h3>
+          <ul>
+            <li>Feature pipeline: rolling stats (7 / 28 day), lag features, holiday flags, month/week encoding.</li>
+            <li>XGBoost with time-based CV splits and early stopping on validation sMAPE.</li>
+            <li>LSTM sequence-to-one architecture (window 28 → next week) with dropout & gradient clipping.</li>
+            <li>Explainability: SHAP summary + per-LSOA force plots for local insight.</li>
+            <li>Evaluation: sMAPE + MASE + per-segment ranking; error analysis via residual distribution.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer>
-    © 2025 Stanimir Dimitrov. All rights reserved.
+    <div class="container">© 2025 Stanimir Dimitrov. All rights reserved.</div>
   </footer>
 </body>
 </html>

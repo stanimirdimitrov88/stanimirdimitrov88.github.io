@@ -4,48 +4,58 @@
   <meta charset="UTF-8" />
   <title>Projects | Stanimir Dimitrov</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root { --bg:#fff; --text:#111827; --muted:#6b7280; --accent:#2563eb; }
-    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; background:var(--bg); color:var(--text); }
-    header { border-bottom:1px solid #e5e7eb; background:#fff; position:sticky; top:0; z-index:10; }
-    .nav { max-width:900px; margin:0 auto; display:flex; gap:1.5rem; padding:.9rem 1rem; }
-    .nav a { text-decoration:none; color:var(--text); font-weight:500; }
-    .nav a.active { color:var(--accent); }
-    main { max-width:900px; margin:0 auto; padding:2.5rem 1rem 3.5rem; }
-    h1 { font-size:2rem; margin-bottom:1.5rem; }
-    .projects { display:grid; gap:1rem; }
-    .project-card { border:1px solid #e5e7eb; border-radius:.75rem; padding:1.1rem 1.25rem; background:#fff; }
-    .project-card h2 { margin:0 0 .4rem 0; font-size:1.05rem; }
-    .project-card a { color:var(--accent); text-decoration:none; }
-    .project-card a:hover { text-decoration:underline; }
-    footer { border-top:1px solid #e5e7eb; text-align:center; padding:1.5rem 1rem; color:#9ca3af; font-size:.85rem; }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="projects.html" class="active">Projects</a>
-    </nav>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span> Stanimir Dimitrov</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <h1>Projects</h1>
-    <div class="projects">
-      <div class="project-card">
-        <h2><a href="project-wardwatch.html">WardWatch – burglary forecasting</a></h2>
-        <p class="muted">XGBoost + LSTM on London LSOAs, SHAP explainability.</p>
+  <main class="container">
+    <section class="section">
+      <h2>Projects</h2>
+      <p class="lead">A growing set of data and product builds.</p>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="project-wardwatch.html">WardWatch – burglary forecasting</a></h3>
+          <div class="meta">XGBoost + LSTM • SHAP explainability • London LSOAs</div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">LSTM</span>
+            <span class="tag">Time series</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/stanimirdimitrov88/wardwatch" target="_blank" rel="noopener">GitHub</a>
+            <a href="project-wardwatch.html">Case study</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3><a href="project-fridgital.html">Fridgital</a></h3>
+          <div class="meta">Receipt OCR • Inventory tracking • Recipe suggestions</div>
+          <div class="tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">OCR</span>
+          </div>
+          <div class="links">
+            <a href="https://github.com/stanimirdimitrov88/fridgital" target="_blank" rel="noopener">GitHub</a>
+            <a href="project-fridgital.html">Case study</a>
+          </div>
+        </article>
       </div>
-      <div class="project-card">
-        <h2><a href="project-fridgital.html">Fridgital</a></h2>
-        <p class="muted">Smart app to reduce food waste via receipt scanning & inventory tracking.</p>
-      </div>
-      <!-- add more like this -->
-    </div>
+    </section>
   </main>
 
   <footer>
-    © 2025 Stanimir Dimitrov. All rights reserved.
+    <div class="container">© 2025 Stanimir Dimitrov. All rights reserved.</div>
   </footer>
 </body>
 </html>

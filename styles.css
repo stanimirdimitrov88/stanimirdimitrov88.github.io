@@ -1,0 +1,70 @@
+/* Global Styles for Stanimir Dimitrov Portfolio */
+:root{
+  --bg:#0b1020;
+  --panel:#0f152a;
+  --panel-2:#121a36;
+  --text:#e6e8ef;
+  --muted:#9aa3b2;
+  --accent:#5b8cff;
+  --accent-2:#22d3ee;
+  --card:#0f152a;
+  --border:rgba(255,255,255,.08);
+  --shadow:0 8px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{padding:0;margin:0}
+body{
+  font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, Apple Color Emoji, Segoe UI Emoji;
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,.12), transparent 60%),
+              radial-gradient(1000px 500px at 120% 10%, rgba(91,140,255,.12), transparent 60%),
+              var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+.container{max-width:980px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-filter: blur(10px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:700;letter-spacing:.2px}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 12px rgba(91,140,255,.6)}
+.nav-links{display:flex;align-items:center;gap:1rem}
+.nav a{color:var(--text);text-decoration:none;font-weight:600;opacity:.9}
+.nav a:hover{opacity:1;color:var(--accent)}
+.nav .active{color:var(--accent)}
+
+/* Hero */
+.hero{padding:72px 0 42px}
+.hero h1{font-size:clamp(32px,5vw,48px);line-height:1.15;margin:0 0 10px}
+.subtitle{color:var(--muted);font-size:1.1rem;margin:0 0 22px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.button{display:inline-flex;align-items:center;gap:.5rem;padding:10px 14px;border-radius:10px;border:1px solid var(--border);color:var(--text);text-decoration:none;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));box-shadow:inset 0 1px rgba(255,255,255,.05)}
+.button.primary{background:linear-gradient(135deg, rgba(91,140,255,.35), rgba(34,211,238,.3));border-color:transparent}
+.button:hover{transform:translateY(-1px);transition:all .2s ease;box-shadow:0 10px 20px rgba(0,0,0,.25)}
+
+/* Sections */
+.section{padding:22px 0 70px}
+.section h2{font-size:1.4rem;margin:0 0 12px}
+.section p.lead{color:var(--muted);margin:0 0 24px}
+
+/* Project Grid */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.card{grid-column:span 12;background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));border:1px solid var(--border);border-radius:16px;padding:18px 18px 16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+@media (min-width:640px){.card{grid-column:span 6}}
+@media (min-width:980px){.card{grid-column:span 4}}
+.card::after{content:"";position:absolute;inset:auto -40% -40% auto;width:160px;height:160px;background:radial-gradient(closest-side, rgba(91,140,255,.18), transparent);transform:rotate(15deg)}
+.card h3{margin:0 0 8px;font-size:1.05rem}
+.card .meta{color:var(--muted);font-size:.95rem;margin-bottom:8px}
+.card .tags{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px}
+.tag{font-size:.8rem;color:var(--text);opacity:.9;border:1px solid var(--border);padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.03)}
+.card .links{display:flex;gap:10px}
+.card a{color:var(--accent);text-decoration:none}
+.card a:hover{text-decoration:underline}
+.card:hover{transform:translateY(-2px);transition:transform .2s ease;box-shadow:0 16px 40px rgba(0,0,0,.35)}
+
+/* Footer */
+footer{border-top:1px solid var(--border);color:var(--muted);text-align:center;padding:28px 0;margin-top:30px}
+
+/* Utilities */
+.muted{color:var(--muted)}
+.spacer{height:16px}
