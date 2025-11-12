@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WardWatch – Stanimir Dimitrov</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --bg:#fff; --text:#111827; --muted:#6b7280; --accent:#2563eb; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin:0; background:var(--bg); color:var(--text); }
+    header { border-bottom:1px solid #e5e7eb; background:#fff; position:sticky; top:0; z-index:10; }
+    .nav { max-width:900px; margin:0 auto; display:flex; gap:1.5rem; padding:.9rem 1rem; }
+    .nav a { text-decoration:none; color:var(--text); font-weight:500; }
+    main { max-width:900px; margin:0 auto; padding:2.5rem 1rem 3.5rem; }
+    h1 { font-size:2rem; margin-bottom:.5rem; }
+    .muted { color:var(--muted); }
+    .hero-img { margin:1.5rem 0; border:1px solid #e5e7eb; border-radius:.75rem; overflow:hidden; }
+    .hero-img img { width:100%; display:block; }
+    .section-title { margin-top:2rem; font-weight:600; }
+    a { color:var(--accent); }
+    footer { border-top:1px solid #e5e7eb; text-align:center; padding:1.5rem 1rem; color:#9ca3af; font-size:.85rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>WardWatch – burglary forecasting</h1>
+    <p class="muted">Predictive policing / spatial–temporal forecasting for London LSOAs.</p>
+
+    <div class="hero-img">
+      <img src="images/wardwatch-dashboard.png" alt="WardWatch dashboard screenshot" />
+    </div>
+
+    <h2 class="section-title">Overview</h2>
+    <p>
+      WardWatch is a predictive model that forecasts burglary risk for London LSOAs. It compares
+      XGBoost, LSTM and simple statistical baselines, and explains feature importance via SHAP.
+    </p>
+
+    <h2 class="section-title">Tech stack</h2>
+    <ul>
+      <li>Python (pandas, scikit-learn, xgboost)</li>
+      <li>LSTM (Keras / TensorFlow or PyTorch)</li>
+      <li>SHAP for explainability</li>
+    </ul>
+
+    <h2 class="section-title">Repository</h2>
+    <p>
+      <a href="https://github.com/yourusername/wardwatch" target="_blank" rel="noopener">View on GitHub</a>
+    </p>
+  </main>
+
+  <footer>
+    © 2025 Stanimir Dimitrov. All rights reserved.
+  </footer>
+</body>
+</html>
