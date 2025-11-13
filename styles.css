@@ -62,6 +62,12 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,16,32,.75);backdrop-f
 .card a:hover{text-decoration:underline}
 .card:hover{transform:translateY(-2px);transition:transform .2s ease;box-shadow:0 16px 40px rgba(0,0,0,.35)}
 
+/* Project media */
+.project-media{margin:22px 0;display:grid;gap:16px}
+.project-media figure{margin:0;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.03);position:relative}
+.project-media img{display:block;width:100%;height:auto;object-fit:cover}
+.project-media figcaption{font-size:.75rem;letter-spacing:.5px;text-transform:uppercase;padding:8px 12px;color:var(--muted);background:rgba(0,0,0,.25)}
+
 /* Footer */
 footer{border-top:1px solid var(--border);color:var(--muted);text-align:center;padding:28px 0;margin-top:30px}
 
