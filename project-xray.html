@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chest X-ray Classification | Stanimir Dimitrov</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span> Stanimir Dimitrov</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <a class="button" href="projects.html">← Back to projects</a>
+      <div class="spacer"></div>
+      <h1>Classification of Chest X-ray Images</h1>
+      <p class="subtitle">Deep learning for thoracic disease detection with ethical analysis.</p>
+
+      <div class="project-media" style="grid-column: span 12;">
+        <figure>
+          <img src="media/xray-placeholder.jpg" alt="Chest X-ray classification results" />
+          <figcaption>Model predictions and performance metrics (add your screenshot here)</figcaption>
+        </figure>
+      </div>
+
+      <div class="grid">
+        <article class="card" style="grid-column: span 12;">
+          <h3>Overview</h3>
+          <p>
+            Fine-tuned Deep Convolutional Neural Networks for classification of thoracic diseases from chest X-ray scans.
+            Implemented data augmentation techniques and utilized two pre-trained models: DenseNet121 and ResNet50.
+          </p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">DenseNet121</span>
+            <span class="tag">ResNet50</span>
+            <span class="tag">Medical Imaging</span>
+          </div>
+        </article>
+
+        <article class="card" style="grid-column: span 12;">
+          <h3>Technical Approach</h3>
+          <ul>
+            <li>Fine-tuned pre-trained DenseNet121 and ResNet50 architectures for thoracic disease classification.</li>
+            <li>Implemented comprehensive data augmentation techniques to improve model generalization.</li>
+            <li>Conducted thorough performance evaluation comparing both model architectures.</li>
+            <li>Applied transfer learning strategies to leverage pre-trained ImageNet weights.</li>
+          </ul>
+        </article>
+
+        <article class="card" style="grid-column: span 12;">
+          <h3>Ethical Considerations</h3>
+          <ul>
+            <li><strong>Shortcut Bias:</strong> Analyzed potential for models to exploit dataset artifacts rather than learning true disease patterns.</li>
+            <li><strong>Cognitive Bias:</strong> Evaluated how model predictions might influence clinical decision-making.</li>
+            <li><strong>Uncertainty Analysis:</strong> Implemented methods to quantify prediction confidence and identify edge cases.</li>
+            <li>Documented limitations and appropriate use cases for clinical deployment.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2025 Stanimir Dimitrov. All rights reserved.</div>
+  </footer>
+</body>
+</html>
